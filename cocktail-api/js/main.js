@@ -7,33 +7,44 @@ let startX;
 let x;
 
 document.querySelector('button').addEventListener('click', getFetch)
-function getFetch(){
-  const choice = document.querySelector('input').value
-  const url = `https://thecocktaildb.com/api/json/v1/1/search.php?f=${choice}`
+//document.querySelector('input').addEventListener('keydown', getFetch)
+function getFetch( ){
+  innerSlider.innerText = "";
+  const choice = document.querySelector('input').value;
+
+  const url = `https://thecocktaildb.com/api/json/v1/1/search.php?s=${choice}`
     console.log(url);
   fetch(url)
       .then(res => res.json()) // parse response as JSON
       .then(data => {
-        console.log(data)
+        console.log(data.drinks)
+        if(data === 'null'){
+        
+          let h22 = document.createElement('h2');
+          h2.innerText = "sorry No cocktails with name of" +choice;
+        }else{ 
+        data.drinks.forEach(a=>{
+
+          let div = document.createElement('div');
+          div.classList.add('card');
+          innerSlider.append(div);
+          let h2 = document.createElement('h2');
+          h2.innerText = a.strDrink;
+          div.append(h2)
+          let img = document.createElement('img');
+          img.src = `${a.strDrinkThumb}`
+          div.append(img)
+
+          let par = document.createElement('p');
+          par.innerText = `${a.strInstructions}`
+          div.append(par)
+  
+} ) }
       })
       .catch(err => {
           console.log(`error ${err}`)
       });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 sliderContainer.addEventListener("mousedown", (e) => {
     pressed = true;
     startX = e.offsetX - innerSlider.offsetLeft;
