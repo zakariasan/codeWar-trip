@@ -16,6 +16,9 @@ app.use(bodyParser.urlencoded({ extended : true }))
 //GET operation
 app.get('/', (req, res)=> {
     //res.send('Hello zak')
+    db.collection('quotes').find().toArray()
+        .then(r => console.log(r))
+        .catch(err => console.log(err))
     res.sendFile(__dirname + '/index.html')
 })
 
