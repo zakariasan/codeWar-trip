@@ -1,0 +1,15 @@
+{
+  "name": "rap-names-api",
+  "version": "1.0.0",
+  "description": "Rap_names",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "author": "zak_4r1A",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.0-beta1",
+    "express": "^4.18.1"
+  }
+}
