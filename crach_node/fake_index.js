@@ -17,16 +17,12 @@ if(req.url ==='/api/users'){
     res.end(JSON.stringify(users))
 }
 
-
-
-
 if(req.url ==='/about'){
         fs.readFile(
             path.join(__dirname, './','about.html'),
             (err, data)=>{
                 if(err) throw err;
             res.writeHead(200, {'Content-Type': 'text/html'});    
-    
             res.end(data)
         })
     }
