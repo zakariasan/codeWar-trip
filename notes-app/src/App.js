@@ -7,8 +7,21 @@ import {nanoid} from "nanoid"
 import './style.css'
 
 function App() {
-  const [notes, setNotes] = React.useState([]);
+  const [notes, setNotes] = React.useState(()=> JSON.parse(localStorage.getItem('notes'))||[]);
   const [currNoteId, setCurrNoteId] = React.useState((notes[0] && notes[0].id) || "");
+
+
+  React.useEffect(()=>{
+    localStorage.setItem("notes", JSON.stringify(notes))
+    //console.log();
+  },[notes])
+   
+  function deleteNote(event, noteId) {
+        event.stopPropagation()
+        console.log("deleted note", noteId)
+    setNotes(pre => pre.filter(a=> a.id != noteId));
+        // Your code here
+    }
 
   function createNewNote(){
     const newNote={
@@ -18,16 +31,28 @@ function App() {
     setNotes(pre => [newNote, ...pre])
     setCurrNoteId(newNote.id)
   }
+  
   function updateNote(text) {
-    setNotes(old => old.map(ele =>{
-      return ele.id === currNoteId ? {...ele, body:text}:ele;
-    }))
+    
+    setNotes(old =>{
+      const newArr = [];
+      for(let i = 0; i < old.length;i++)
+      {
+        if(old[i].id === currNoteId)
+          newArr.unshift({...old[i], body:text})
+        else
+          newArr.push(old[i])
+      }
+      return newArr;
+    })
   }
+  
   function findCurrentNote() {
     return notes.find(note => {
       return note.id === currNoteId }) || notes[0]
 
   }
+  
   return (
     <main>
       {
@@ -43,6 +68,7 @@ function App() {
                 currentNote={findCurrentNote()}
                 setCurrNoteId={setCurrNoteId}
                 newNote={createNewNote}
+                deleteNote={deleteNote}
               />
           {
             currNoteId && notes.length && 

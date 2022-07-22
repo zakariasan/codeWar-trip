@@ -4,7 +4,14 @@
 //What if the string is empty? Then the result should be empty object literal, {}.
 
 
-
+//easy way 
+////function count (string) {
+  //var count = {};
+  //string.split('').forEach(function(s) {
+     //count[s] ? count[s]++ : count[s] = 1;
+  //});
+  //return count;
+//}
 function count (str) {  
   // The function code should be here
   let words = []
