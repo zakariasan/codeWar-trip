@@ -1,7 +1,7 @@
 import React from 'react'
 import Sidebar from "./component/Sidebar"
 import Editor from "./component/Editor"
-import { data } from "./data"
+//import { data } from "./data"
 import Split from "react-split"
 import {nanoid} from "nanoid"
 import './style.css'
@@ -19,7 +19,7 @@ function App() {
   function deleteNote(event, noteId) {
         event.stopPropagation()
         console.log("deleted note", noteId)
-    setNotes(pre => pre.filter(a=> a.id != noteId));
+    setNotes(pre => pre.filter(a=> a.id !== noteId));
         // Your code here
     }
 
