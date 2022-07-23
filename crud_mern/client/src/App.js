@@ -5,12 +5,13 @@ import axios from "axios";
 function App() {
   const [foodName, setFoodName] = React.useState("");
   const [days, setDays] = React.useState(0);
-  const addFood = () => {
+ 
+  function  addFood (){
     axios.post("http://localhost:5000/insert", {
       foodName:foodName,
       days:days,
     }).then((res)=> console.log(res)).catch((err)=>console.log(err));
-  };
+ };
 
   return (
     <div className="App">
