@@ -4,5 +4,7 @@
 //It should remove all values from list a, which are present in list b keeping their order.
 
 function array_diff(a, b) {
+
   return a.filter(e => !b.includes(e));
 }
+
