@@ -1,6 +1,7 @@
 # CodeWars Challenges: <a target="_blank" href="https://www.codewars.com/users/zak_4ri1 " >Visit Here</a> 
 
 ![alt tag](./assets/Screenshot2022-08-29Stat1.png?raw=true "stat" )
+![alt tag](./assets/Screenshot2022-08-29State2.png?raw=true "stat" )
 
 A repository filled with codewars challenges (kata) and all idea of project or learning new Stuff. Currently Ranked #32,406 on the global leaderboard, Completed over 100+ challenges and Push 1 solutions every day.
 
