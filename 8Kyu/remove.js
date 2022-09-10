@@ -14,3 +14,9 @@
 function remove(s) {
   return s.endsWith('!') ? s.slice(0, -1) : s;
 }
+function remove (string) {
+  //coding and coding....
+  
+  let str = string.split('').map(a=> a=='!'?'':a).join('')
+  return str+'!'
+  }
