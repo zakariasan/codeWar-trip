@@ -4,7 +4,21 @@
 
 /*Return true if the array contains the value, false if not.*/
 
-function check(a, x) {
-  return a.includes(x)
+function check1(a, x) {
+  return a.includes(x)  console.log(a)
+
   // your code here
 }
+function check(a,x){
+    console.log(a)
+
+  if(x === a[0])
+    return true;
+  if(a.length == 1)return false
+  else
+    return check(a.slice(1,a.length),x)
+ // return false
+  
+//return a.includes(x)  
+  
+};
