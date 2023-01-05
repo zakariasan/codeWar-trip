@@ -9,12 +9,16 @@ void    ft_putstr(char *w);
 void    ft_putnbr(int n);
 int     ft_strlen(char *word);
 int     ft_atoi(const char *str);
+int     ft_strcmp(char *s1, char *s2);
+
 
 void    ft_foreach(int *tab, int length, void(*f)(int));
 int     *ft_map(int *tab, int length, int(*f)(int));
 int     ft_any(char **tab, int(*f)(char *));
 int     ft_count_if(char **tab, int(*f)(char *));
 int     ft_is_sort(int *tab, int length, int(*f)(int ,int));
+void    ft_sort_wordtab(char **tab);
+
 
 int     ft_add(int nbr1, int nbr2);
 int     ft_sub(int nbr1, int nbr2);
