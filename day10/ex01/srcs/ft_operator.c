@@ -1,6 +1,19 @@
 #include "../includes/libft.h"
 #include <stdlib.h>
 
+/*#include "../includes/ft_oop.h"*/
+/*int ft_getOp(char *operator)*/
+/*{*/
+    /*int i;*/
+
+    /*i = 0;*/
+    /*while(operator && gl_opptab[i].str){*/
+        /*if(ft_strcmp(operator, gl_opptab[i].str) == 0)*/
+            /*return i;*/
+        /*i++;*/
+    /*}*/
+    /*return -1;*/
+/*}*/
 int ft_do_op(char *nbr1, char *op, char *nbr2)
 {
     int n1;
@@ -26,22 +39,6 @@ int ft_do_op(char *nbr1, char *op, char *nbr2)
     }
     return 0;
 }
-
-int ft_getOp(char *operator)
-{
-    if(operator[0] == '+')
-        return 0;
-    if(operator[0] == '-')
-        return 1;
-    if(operator[0] == '*')
-        return 2;
-    if(operator[0] == '/')
-        return 3;
-    if(operator[0] == '%')
-        return 4;
-    return -1;
-}
-
 int ft_add(int nbr1, int nbr2)
 {
     return nbr1 + nbr2;
@@ -72,5 +69,12 @@ int ft_mod(int nbr1, int nbr2)
         ft_putstr("Stop : modulo by zero\n");
     }else
         return nbr1 % nbr2;
+    return 0;
+}
+int ft_usage()
+{
+    /*nbr1 = 0;*/
+    /*nbr2 = 0;*/
+    ft_putstr("error : only [ - + * / % ] are accepted.\n");
     return 0;
 }

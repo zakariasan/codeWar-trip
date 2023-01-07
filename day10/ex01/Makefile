@@ -33,7 +33,7 @@ $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(LFLAGS)/$(INCLS)
 
 com : $(NAME)
-	gcc main.c -L. -lft
+	gcc main.c -L. -lft -g
 
 clean:
 	rm -rf $(OBJS) $(OBJ_DIR)

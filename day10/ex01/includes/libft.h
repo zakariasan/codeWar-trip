@@ -4,6 +4,12 @@
 #include "unistd.h"
 #include <stdlib.h>
 
+typedef struct  s_opp
+{
+    char    *str;
+    int     (*out)(int ,int);
+}               t_opp;
+
 void    ft_putchar(char c);
 void    ft_putstr(char *w);
 void    ft_putnbr(int n);
@@ -18,6 +24,7 @@ int     ft_any(char **tab, int(*f)(char *));
 int     ft_count_if(char **tab, int(*f)(char *));
 int     ft_is_sort(int *tab, int length, int(*f)(int ,int));
 void    ft_sort_wordtab(char **tab);
+void ft_advanced_sort_wordtab(char **tab, int(*cmp)(char*, char*));
 
 
 int     ft_add(int nbr1, int nbr2);
@@ -27,4 +34,9 @@ int     ft_div(int nbr1, int nbr2);
 int     ft_mod(int nbr1, int nbr2);
 int     ft_getOp(char *operato);
 int     ft_do_op(char *nbr1, char *op, char *nbr2);
+int     ft_usage();
+int ft_advanced_do_op(char *nbr1, char *op, char *nbr2);
+
+
+
 #endif
