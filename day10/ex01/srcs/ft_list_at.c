@@ -2,22 +2,22 @@
 
 t_list *ft_list_at(t_list *begin_list, unsigned int nbr)
 {
-    int size;
-    int i;
+    unsigned int i;
     t_list *tmp;
+    unsigned int size;
 
-    tmp = begin_list;
-    size = ft_list_size(tmp);
-    i = 0;
-    if(begin_list && nbr < size)
+    size    = ft_list_size(begin_list);
+    tmp     = begin_list;
+    i       = 0;
+    if(tmp && nbr < size)
     {
-        while (i < nbr)
+        while (tmp)
         {
+            if(i == nbr)
+                return tmp;
             tmp = tmp->next;
             i++;
         }
-        return tmp;
-
-    }else
-        return NULL;
+    }
+    return NULL;
 }

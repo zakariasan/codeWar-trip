@@ -11,7 +11,7 @@ void ft_list_push_back(t_list **begin_list, void *data)
             tmp = tmp->next;
         }
         tmp->next = ft_create_elem(data);
-    }
+    }else
         tmp = ft_create_elem(data);
 }
 
