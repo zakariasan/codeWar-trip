@@ -1,8 +1,11 @@
 #ifndef __LIBFT_H__
 #define __LIBFT_H__
 
-#include "unistd.h"
+#include <unistd.h>
 #include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 typedef struct      s_list
 {
@@ -65,5 +68,8 @@ void    ft_sorted_list_insert(t_list **begin_list, void *data, int (*cmp)());
 void    ft_sorted_list_merge(t_list **begin_list1, t_list *begin_list2, int (*cmp)());
 int     ft_list_size(t_list *begin_list);
 
+// files day 12
+
+void ft_display_files(int ac , char **fparam);
 
 #endif
