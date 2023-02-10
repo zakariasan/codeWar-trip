@@ -1,7 +1,5 @@
 def is_digit(n):
-    if(n<= '9' and n>='0'):  
-        return True 
-    return False
+ return n.isdigit() and len(n)==1
     #your code here
 
 
