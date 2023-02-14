@@ -71,5 +71,6 @@ int     ft_list_size(t_list *begin_list);
 // files day 12
 
 void ft_display_files(int ac , char **fparam);
-
+int  ft_cat(int ac , char **fparam);
+void  ft_tail(int ac , char **fparam);
 #endif

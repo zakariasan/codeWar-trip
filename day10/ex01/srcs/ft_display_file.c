@@ -26,7 +26,6 @@ void ft_display_files(int ac , char **fparam)
 
         if(close(fd) == -1)
             write(2, "close : error()\n", 16);
-
     }
 
 
