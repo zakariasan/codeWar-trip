@@ -6,7 +6,6 @@ def main():
     print('shitty description = shitty solution')
 
 
-    # # hahahahahahaha
 
 
     # Terminal game bug squashing
